@@ -1,0 +1,22 @@
+<ion-view title="Login">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <div style="line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; background-color: rgb(255, 255, 255);">
+            <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
+        </div>
+        <form class="list" name="userForm" ng-submit="isValidUser(userForm)">
+            <ion-list>
+                <label class="item item-input">
+                    <span class="input-label">Username</span>
+                    <input type="text" ng-model="username" placeholder="">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input type="password" ng-model="password" placeholder="">
+                </label>
+            </ion-list>
+            <div class="spacer" style="height: 40px;"></div>
+            <button class="button button-positive button-block ">Log in</button>
+            <button class="button button-positive button-clear button-block ">Or create an account</button>
+        </form>
+    </ion-content>
+</ion-view>

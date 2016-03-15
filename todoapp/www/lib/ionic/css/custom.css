@@ -1,0 +1,11 @@
+.done div.item-content {
+  background-color: #E9F7E9;
+}
+
+.done-showCheckmark {
+  color: #429642;
+}
+.done-hideCheckmark {
+  color: #181796;
+  display: none;
+}
