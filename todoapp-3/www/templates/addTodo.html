@@ -1,0 +1,35 @@
+<ion-view title="Add Todo">
+  <ion-nav-buttons side="secondary" >
+    <button class="button button-clear"
+            ng-click="logout()" >Logout
+    </button >
+  </ion-nav-buttons >
+
+    <ion-content overflow-scroll="true" padding="true" scroll="false" class="has-header">
+        <div class="spacer" style="width: 300px; height: 56px;"></div>
+        <div class="list card">
+            <div class="item item-divider">New Homework</div>
+            <div class="item item-body">
+                <form name="addForm" ng-submit="addTodo(addForm)" class="list">
+                    <label class="item item-input">
+                        <span class="input-label">Homework Title</span>
+                        <input type="text" name="title" ng-model="formData.title" placeholder="Homework Title">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Class</span>
+                        <input type="text" name="classname" ng-model="formData.classname" placeholder="Class">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Due Date</span>
+                        <input type="date" name="dueDate" ng-model="formData.dueDate" placeholder="Due Date">
+                    </label>
+                  <button class="button button-balanced button-block  icon-left ion-android-add"
+                          type="submit" >Create
+                  </button >
+
+                </form>
+            </div>
+        </div>
+        <form class="list"></form>
+    </ion-content>
+</ion-view>

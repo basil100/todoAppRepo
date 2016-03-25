@@ -1,0 +1,35 @@
+<ion-view cache-view="false" title="Todo List">
+  <ion-nav-buttons side="primary">
+    <button class="button button-icon ion-ios-minus-outline" ng-click="showButton()"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="secondary" >
+    <button class="button button-clear"
+            ng-click="logout()" >Logout
+    </button >
+  </ion-nav-buttons >
+
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <form class="list">
+            <label class="item item-input" name="search">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="search" ng-model="search.title" placeholder="Search">
+            </label>
+        </form>
+        <div class="spacer" style="width: 279px; height: 9px;"></div>
+        <ion-item class="item-divider">Homeworks</ion-item>
+        <ion-list show-delete="showDelete" show-option="showDone">
+
+            <ion-item ng-repeat="homework in homeworks.results | filter:search" ng-class="{'done': homework.done}" class="item-thumbnail-left item-avatar item-icon-right item-remove-animate">
+              <img src="img/homework.png">
+              <h2>{{homework.title}}</h2>
+              <p>{{homework.classname}}</p>
+              <p>{{homework.id}}</p>
+              <i class="icon ion-ios-checkmark-outline" ng-show="homework.done" ng-class="{'done-showCheckmark':homework.done}" style="font-size: 46pt; padding-right: 26px;"></i>
+
+
+              <ion-delete-button ng-click="deleteHomework($index)" class="ion-minus-circled"></ion-delete-button>
+              <ion-option-button ng-click="markHomework($index)" ng-class="homework.done? 'ion-ios-redo' : 'ion-checkmark'"></ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
